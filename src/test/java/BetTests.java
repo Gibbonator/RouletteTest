@@ -37,7 +37,7 @@ public class BetTests {
         System.out.print(output);
         Assert.assertTrue("Incorrect winnings ...",output.contains("£0.00"));
     }
-    @Test(expected=IllegalArgumentException.class)
+    @Test(expected =IllegalArgumentException.class)
     public void invalidBetAmountThrowsException() throws Exception{
         RouletteTable rouletteTable = mock(RouletteTable.class);
         Integer[] square = new Integer[1];
@@ -46,7 +46,7 @@ public class BetTests {
         bet.setSquares(square);
         bet.setValue(0);
     }
-    @Test(expected= RouletteGameException.class)
+    @Test(expected = RouletteGameException.class)
     public void invalidSquaresThrowsException() throws Exception {
         RouletteTable rouletteTable = mock(RouletteTable.class);
         Integer[] square = new Integer[1];

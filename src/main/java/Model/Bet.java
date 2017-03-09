@@ -1,5 +1,7 @@
 package Model;
 
+import Exeption.RouletteGameException;
+
 import java.math.BigDecimal;
 
 public class Bet {
@@ -83,7 +85,7 @@ public class Bet {
         return false;
     }
     /* If the bet type has pre determined squares, attempting to set the squares manually throws an illegal argument exception*/
-    public void setSquares(Integer[] bets) throws IllegalArgumentException {
+    public void setSquares(Integer[] bets) throws IllegalArgumentException, RouletteGameException {
         if(this.getType().text.equals("EVEN") || this.getType().text.equals("ODD")){
             throw new IllegalArgumentException("No need to set squares for outer bets");
         }
@@ -91,7 +93,7 @@ public class Bet {
             this.squares = bets;
         }
         else{
-            throw new IllegalArgumentException("Invalid Squares");
+            throw new RouletteGameException("Invalid Squares");
         }
     }
     private Double getPayout(){
