@@ -109,7 +109,7 @@ public class BetTests {
         Assert.assertTrue("Wrong returns for 3 on even bet", output.contains("£0.00"));
     }
     @Test(expected = IllegalArgumentException.class)
-    public void settingSquaresOnEvenBetThrowsException(){
+    public void settingSquaresOnEvenBetThrowsException() throws  IllegalArgumentException, RouletteGameException{
         RouletteTable rouletteTable = new RouletteTable();
         Bet bet = new Bet(Bet.BetTypes.EVEN, rouletteTable);
         Integer[] squares = new Integer[1];
@@ -117,7 +117,7 @@ public class BetTests {
         bet.setSquares(squares);
     }
     @Test(expected = IllegalArgumentException.class)
-    public void settingSquaresOnOddBetThrowsException(){
+    public void settingSquaresOnOddBetThrowsException() throws  IllegalArgumentException, RouletteGameException{
         RouletteTable rouletteTable = new RouletteTable();
         Bet bet = new Bet(Bet.BetTypes.ODD, rouletteTable);
         Integer[] squares = new Integer[1];
