@@ -84,7 +84,7 @@ public class Bet {
     }
     /* If the bet type has pre determined squares, attempting to set the squares manually throws an illegal argument exception*/
     public void setSquares(Integer[] bets) throws IllegalArgumentException {
-        if(this.getType().text.equals("EVEN_OR_ODD")){
+        if(this.getType().text.equals("EVEN") || this.getType().text.equals("ODD")){
             throw new IllegalArgumentException("No need to set squares for outer bets");
         }
         if( checkIfValidSquares(bets) && validSquareAmount(bets)){
